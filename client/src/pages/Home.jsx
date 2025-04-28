@@ -98,8 +98,37 @@ export default function Home() {
     }, [posts, search]);
 
     return (
-        <div>
-
-        </div>
+        <Container>
+            <HeadLine>
+                Explore popular posts in the Community!
+                <span>⦾ Generated with AI ⦾</span>
+            </HeadLine>
+            <SearchBar
+                search={search}
+                handleChange={(e) => setSearch(e.target.value)}
+            />
+            <Wrapper>
+                {error && <div style={{ color: "red" }}>{error}</div>}
+                {loading ? (
+                    <CircularProgress />
+                ) : (
+                    <CardWrapper>
+                        {filteredPost.length > 0 ? (
+                            <>
+                                {filteredPost
+                                    .slice()
+                                    .reverse()
+                                    .map((item, index) => (
+                                        <ImageCard key={index} item={item} />
+                                    ))
+                                }
+                            </>
+                        ) : (
+                            <>No Posts Found !!</>
+                        )}
+                    </CardWrapper>
+                )}
+            </Wrapper>
+        </Container>
     )
 }
