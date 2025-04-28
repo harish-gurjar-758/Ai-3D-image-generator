@@ -24,7 +24,7 @@ const Card = styled.div`
     }
 `;
 
-const HoverOverlay = style.div`
+const HoverOverlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;

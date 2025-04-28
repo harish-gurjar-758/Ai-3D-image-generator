@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AutoAwesome, CreateRounded } from "@mui/icons-material";
-import TextInput from "../Input/TextInput";
-import Button from "../buttons/button";
-import { CreatePost, GenerateImageFromPrompt } from "../../api";
+import TextInput from "../input/TextInput.jsx";
+import Button from "../button/button.js";
+import { CreatePost, GenerateImageFromPrompt } from "../../api/api.js";
 const Form = styled.div`
     flex: 1;
     padding: 16px 20px;

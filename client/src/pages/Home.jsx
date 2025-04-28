@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import SearchBar from "../components/SearchBar";
 import ImageCard from "../components/cards/ImageCard";
-import { GetPosts } from "../api";
+import { GetPosts } from "../api/api.js";
 import { CircularProgress } from "@mui/material";
 
 const Container = styled.div`
@@ -20,7 +20,7 @@ const Container = styled.div`
         background: ${({ theme }) => theme.background};
 `;
 
-const HeadLine = style.div`
+const HeadLine = styled.div`
     font-size: 34px;
     font-weight: 500;
     color: ${({ theme }) => theme.text_primary};
