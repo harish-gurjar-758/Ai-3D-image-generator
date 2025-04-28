@@ -81,6 +81,10 @@ export default function Home() {
             });
     };
 
+    useEffect(()=>{
+        getPosts();
+    }, []);
+
     useEffect(() => {
         if (!search) {
             setFilteredPost(posts);
@@ -101,7 +105,7 @@ export default function Home() {
         <Container>
             <HeadLine>
                 Explore popular posts in the Community!
-                <span>⦾ Generated with AI ⦾</span>
+                <Span>⦾ Generated with AI ⦾</Span>
             </HeadLine>
             <SearchBar
                 search={search}
