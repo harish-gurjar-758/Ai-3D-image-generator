@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 `;
 
 const Label = styled.label`
@@ -25,7 +25,7 @@ const OutlinedInput = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  &:focus-within{
+  &:focus-within {
     border-color: ${({ theme }) => theme.primary};
   }
 `;
@@ -37,25 +37,25 @@ const Input = styled.input`
   border: none;
   background-color: transparent;
   color: ${({ theme }) => theme.text_secondary};
-  &:focus{
+  &:focus {
     outline: none;
   }
-`
+`;
 
-export default function TextInput({
+const TextInput = ({
   label,
   placeholder,
   name,
   value,
-  handleChange,
+  handelChange,
   textArea,
   rows,
   columns,
-}) {
+}) => {
   return (
     <Container>
       <Label>{label}</Label>
-      <OutlinedInput >
+      <OutlinedInput>
         <Input
           as={textArea ? "textarea" : "input"}
           name={name}
@@ -63,9 +63,11 @@ export default function TextInput({
           columns={columns}
           placeholder={placeholder}
           value={value}
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => handelChange(e)}
         />
       </OutlinedInput>
     </Container>
-  )
-}
+  );
+};
+
+export default TextInput;

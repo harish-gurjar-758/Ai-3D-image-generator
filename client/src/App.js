@@ -1,8 +1,8 @@
-import styled, { ThemeProvider, themeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "./utils/theme";
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NavBar from "./components/NavBar";
-import Home from './pages/Home';
+import styled, { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "./utils/theme.js";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/NavBar.jsx";
+import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 
 const Container = styled.div`
@@ -31,7 +31,7 @@ function App() {
       <Container>
         <Wrapper>
           <BrowserRouter>
-            <NavBar />
+            <Navbar />
             <Routes>
               <Route path="/" exact element={<Home />} />
               <Route path="/post" exact element={<CreatePost />} />
